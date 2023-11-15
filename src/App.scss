@@ -17,11 +17,9 @@ ul {
   box-sizing: border-box;
 }
 
-
 body {
-  background: $black;
+  background: #040404;
   position: relative;
-  min-height: 100vh;
   color: $siteColor;
   font-family: $regular;
   min-height: 100vh;
@@ -31,14 +29,15 @@ body {
   }
 }
 
-.home_wrapper{
-  background: red;  
-  opacity: 0.1;
-  width: 100%;
-  height: 100vh;
-}
-
 #root{
   width: 100%;
   height: 100%;
+}
+
+.cinema_container{
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
