@@ -9,7 +9,7 @@
 		"MpaRating": "18+",
 		"Category": "Movie",
 		"Duration": "6000",
-		"Description": "Info About it"
+		"Description": "Info About it   Lorem Ipsum is simply dummy t   Lorem Ipsum is simply dummy t"
 	},
 	"TendingNow": [
 		{
@@ -75,7 +75,7 @@
 			"Category": "TV Show",
 			"Duration": "5300",
 			"VideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-			"Description": "Info About it"
+			"Description": "Info Abou FeaturedTitleImage FeaturedTit leImageF eatured TitleImaget it"
 		},
 		{
 			"Id": "6",
@@ -87,7 +87,7 @@
 			"MpaRating": "18+",
 			"Category": "TV Show",
 			"Duration": "1200",
-			"VideoUrl": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+			"VideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
 			"Description": "Info About it"
 		},
 		{
@@ -126,7 +126,7 @@
 			"MpaRating": "18+",
 			"Category": "Movie",
 			"Duration": "2300",
-			"VideoUrl": "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+			"VideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
 			"Description": "Info About it"
 		},
 		{

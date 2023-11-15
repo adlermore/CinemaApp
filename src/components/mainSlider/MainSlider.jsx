@@ -3,9 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../../assets/scss/MainSlider/_mainSlider.scss';
 import Slider from "react-slick";
-// import sliderImg1 from '../../assets/img/https_specials-1.png';
 
-const Menu = ({ dataMoves , setCurrentMove}) => {
+const Menu = ({ dataMoves, setCurrentMove }) => {
     const [loading, setLoading] = useState(false);
     const sliderRef = createRef();
     const scroll = useCallback(
@@ -23,27 +22,30 @@ const Menu = ({ dataMoves , setCurrentMove}) => {
         window.addEventListener("wheel", e => {
             scroll(e.deltaY);
         });
-        setTimeout(() => {
+        if (dataMoves) {
             setLoading(true)
-        }, 1000);
-    }, [scroll]);
+        }
 
-    const handleCurrentMove = (move)=>{
+    }, [scroll, dataMoves ]);
+
+    const handleCurrentMove = (move) => {
+        sessionStorage.setItem('lastClickedMovieId', move.Id);
+
         let seconds = move.Duration;
-        let hours = Math.floor(seconds / 3600)+'h';
+        let hours = Math.floor(seconds / 3600) + 'h';
         let minutes = Math.floor((seconds % 3600) / 60) + 'm';
         setCurrentMove({
             ...move,
             TitleImage: require(`../../assets/img/${move.TitleImage}`),
-            CoverImage : require(`../../assets/img/${move.CoverImage}`),
+            CoverImage: require(`../../assets/img/${move.CoverImage}`),
             Duration: `${hours} ${minutes}`,
-            VideoUrl: move.VideoUrl,
+            VideoUrl: move.VideoUrl
         });
     }
 
     const settingsTrending = {
         infinite: true,
-        autoplay : true,
+        autoplay: true,
         speed: 500,
         slidesToShow: 8.1,
         slidesToScroll: 1,
@@ -73,7 +75,7 @@ const Menu = ({ dataMoves , setCurrentMove}) => {
                         {dataMoves.TendingNow.map((move, index) => (
                             <div key={index} className='slider_block'>
                                 <div className="slider_inner"
-                                    onClick={()=>handleCurrentMove(move)}
+                                    onClick={() => handleCurrentMove(move)}
                                 >
                                     <img src={require(`../../assets/img/${move.CoverImage}`)} alt="slideImg" />
                                 </div>

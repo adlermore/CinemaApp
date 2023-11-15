@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import Menu from '../components/Menu/Menu';
 import '../assets/scss/HomePage/_homePage.scss';
@@ -7,9 +6,15 @@ import { IoMdPlay } from "react-icons/io";
 import MainSlider from '../components/mainSlider/MainSlider';
 import jsonData from '../data.json';
 import FeaturedCoverImage from '../assets/img/FeaturedCoverImage.png';
+import { TailSpin } from "react-loader-spinner";
+
 const video = "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4";
 
 const HomePage = () => {
+    const [movies, setMovies] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [coverImageShow, setcoverImageShow] = useState(true);
+    const videoRef = useRef(null)
 
     const [currentMove, setCurrentMove] = useState({
         Category: "Movie",
@@ -21,26 +26,49 @@ const HomePage = () => {
         VideoUrl: video,
         Description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
     })
-    const [data, setData] = useState(null);
-    const [coverImageShow, setcoverImageShow] = useState(true);
-
-    const videoRef = useRef(null)
 
     useEffect(() => {
         setTimeout(() => {
-            setData(jsonData);
-        }, 1000);
-    }, []);
+            setMovies(jsonData);
+        }, 500);
+
+        const storedMovieId = sessionStorage.getItem('lastClickedMovieId');
+        if (storedMovieId && movies !== null) {
+            const sortedMovies = [
+                movies.TendingNow.find((movie) => movie.Id === storedMovieId)
+            ];
+            let seconds = sortedMovies[0].Duration;
+            let hours = Math.floor(seconds / 3600) + 'h';
+            let minutes = Math.floor((seconds % 3600) / 60) + 'm';
+
+            setCurrentMove({
+                ...sortedMovies[0],
+                TitleImage: require(`../assets/img/${sortedMovies[0].TitleImage}`),
+                CoverImage: require(`../assets/img/${sortedMovies[0].CoverImage}`),
+                Duration: `${hours} ${minutes}`,
+                VideoUrl: sortedMovies[0].VideoUrl
+            })
+            setTimeout(() => {
+                videoRef.current.load();
+            });
+        }
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500);
+    }, [movies]);
 
     const SetcoverImageTime = setTimeout(() => {
         setcoverImageShow(false)
-    }, 3000);
+    }, 4000);
 
     const setTheCurrentMove = (currMove) => {
+
         clearTimeout(SetcoverImageTime);
         setCurrentMove(currMove);
         setcoverImageShow(true);
-        videoRef.current.load();
+        setTimeout(() => {
+            videoRef.current.load();
+        });
         videoRef.current.play();
     }
 
@@ -50,6 +78,11 @@ const HomePage = () => {
 
     return (
         <div className='cinema_container'>
+            {loading &&
+                <div className="loader_block">
+                    <TailSpin />
+                </div>
+            }
             <Menu />
             <div className={coverImageShow ? 'home_wrapper coverImageShow' : ' home_wrapper coverVideoShow'} style={containerStyle} >
                 <div className="main_film_content">
@@ -74,7 +107,7 @@ const HomePage = () => {
                     </video>
                 </div>
             </div>
-            <MainSlider dataMoves={data} setCurrentMove={setTheCurrentMove} />
+            <MainSlider dataMoves={movies} setCurrentMove={setTheCurrentMove} />
         </div>
     )
 }

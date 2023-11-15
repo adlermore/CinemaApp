@@ -136,5 +136,42 @@
             }
         }
     }
+
+    @media (max-width: 1440px) {
+        width: 85px;
+        .menu_inner {
+            padding: 20px 0 0 20px;
+        }
+        .main_menu li img {
+            width: 23px;
+        }
+        .user_image {
+            width: 61px;
+            height: 60px;
+        }
+        .user_name {
+            font-size: 26px;
+            line-height: 31px;
+        }
+        .main_menu li {
+            height: 55px;
+            padding: 0 20px;
+        }
+        .menu_link {
+            margin-left: 35px;
+            font-size: 28px;
+            line-height: 32px;
+        }
+        .main_menu {
+            margin-top: 20px;
+        }
+        .bottom_links a {
+            font-size: 18px;
+            line-height: 23px;
+            margin-bottom: 15px;
+            letter-spacing: 3.8px;
+        }
+    }
+
 }
 
