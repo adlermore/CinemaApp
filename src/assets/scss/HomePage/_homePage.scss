@@ -4,7 +4,7 @@
 .home_wrapper {
     width: 100%;
     background-size: cover;
-    padding-top: 120px;
+    padding-top: 80px;
     flex: 1;
     background-position: right top !important;
     background-size: cover !important;
@@ -76,8 +76,8 @@
     }
     .film_desc_image{
         max-width: 680px;
-        height: 85px;
-        margin-top: 20px;
+        height: 150px;
+        margin-top: 10px;
         img{
             width: 100%;
             height: 100%;
@@ -167,7 +167,6 @@
         .film_desc_image img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
         }
         .film_desc_image {
             max-width: 468px;
