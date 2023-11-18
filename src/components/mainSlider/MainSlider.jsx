@@ -38,6 +38,7 @@ const Menu = ({ dataMoves, setCurrentMove }) => {
             ...move,
             TitleImage: require(`../../assets/img/${move.TitleImage}`),
             CoverImage: require(`../../assets/img/${move.CoverImage}`),
+            SlideImage: require(`../../assets/img/${move.SlideImage}`),
             Duration: `${hours} ${minutes}`,
             VideoUrl: move.VideoUrl
         });

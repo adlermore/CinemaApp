@@ -7,9 +7,25 @@
     padding-top: 120px;
     flex: 1;
     background-position: right top !important;
-    background-size: 100% 100% !important;
+    background-size: cover !important;
     transition: opacity 0.5s;
     position: relative;
+    &::before{
+        content: "";
+        background: transparent linear-gradient(90deg, #040404 0%, #040404FA 21%, #04040400 100%) 0% 0% no-repeat padding-box;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .main_film_content{
+        position: relative;
+        z-index: 6;
+    }
     .video_inner_container{
       width: 100%;
       height: 100%;
@@ -21,7 +37,7 @@
         top: 0;
         left: 0;
         right: 0;
-        bottom: -385px;
+        bottom: 0;
         width: 100%;
         z-index: -1;
         &::before{
@@ -44,6 +60,9 @@
     }
     &.coverVideoShow{
         background: transparent !important;
+        &:before{
+            opacity: 0;
+        }
         .video_container{
             opacity: 1;
         }
@@ -62,7 +81,7 @@
         img{
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            vertical-align: top;
         }
     }
     .second_line{

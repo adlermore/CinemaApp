@@ -22,6 +22,7 @@ const HomePage = () => {
         ReleaseYear: "2021",
         MpaRating: "18+",
         CoverImage: FeaturedCoverImage,
+        SlideImage: FeaturedCoverImage,
         Duration: "1h 48m",
         VideoUrl: video,
         Description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
@@ -45,6 +46,7 @@ const HomePage = () => {
                 ...sortedMovies[0],
                 TitleImage: require(`../assets/img/${sortedMovies[0].TitleImage}`),
                 CoverImage: require(`../assets/img/${sortedMovies[0].CoverImage}`),
+                SlideImage: require(`../assets/img/${sortedMovies[0].SlideImage}`),
                 Duration: `${hours} ${minutes}`,
                 VideoUrl: sortedMovies[0].VideoUrl
             })
@@ -73,7 +75,7 @@ const HomePage = () => {
     }
 
     const containerStyle = {
-        background: `url(${currentMove.CoverImage}) no-repeat`,
+        background: `url(${currentMove.SlideImage}) no-repeat`,
     };
 
     return (
