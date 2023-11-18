@@ -210,20 +210,6 @@
 			"Description": "Фильм расскажет о секретарше Джули Пауэлл — в течение года пытающейся приготовить 524 блюда по рецептам, описанным в книге Джулии Чайлд «Как овладеть искусством французской кухни»."
 		},
 		{
-			"Id": "15",
-			"Title": "Title 5",
-			"CoverImage": "https_specials-5.png",
-			"TitleImage": "julia-and-ph.png",
-			"SlideImage": "julia-and-the-phantoms.jpeg" ,
-			"Date": "2021-10-15T12:16:50.894556",
-			"ReleaseYear": "2021",
-			"MpaRating": "12+",
-			"Category": "TV Show",
-			"Duration": "5300",
-			"VideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-			"Description": "Фильм расскажет о секретарше Джули Пауэлл — в течение года пытающейся приготовить 524 блюда по рецептам, описанным в книге Джулии Чайлд «Как овладеть искусством французской кухни»."
-		},
-		{
 			"Id": "16",
 			"Title": "Title 6",
 			"CoverImage": "https_specials-6.png",
@@ -278,6 +264,21 @@
 			"Duration": "1200",
 			"VideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
 			"Description": "По прошествии десяти лет тревожного молчания гениальный Ганнибал Лектер пишет письмо агенту ФБР Кларисе Старлинг, предлагая ей возобновить их прервавшуюся интеллектуальную дуэль."
+		},
+		
+		{
+			"Id": "15",
+			"Title": "Title 5",
+			"CoverImage": "https_specials-5.png",
+			"TitleImage": "julia-and-ph.png",
+			"SlideImage": "julia-and-the-phantoms.jpeg" ,
+			"Date": "2021-10-15T12:16:50.894556",
+			"ReleaseYear": "2021",
+			"MpaRating": "12+",
+			"Category": "TV Show",
+			"Duration": "5300",
+			"VideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+			"Description": "Фильм расскажет о секретарше Джули Пауэлл — в течение года пытающейся приготовить 524 блюда по рецептам, описанным в книге Джулии Чайлд «Как овладеть искусством французской кухни»."
 		}
 	]
 }

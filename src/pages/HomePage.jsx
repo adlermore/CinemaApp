@@ -65,13 +65,23 @@ const HomePage = () => {
 
     const setTheCurrentMove = (currMove) => {
 
-        clearTimeout(SetcoverImageTime);
-        setCurrentMove(currMove);
-        setcoverImageShow(true);
-        setTimeout(() => {
-            videoRef.current.load();
-        });
-        videoRef.current.play();
+        let isPlaying = videoRef.current.currentTime > 0 && !videoRef.current.paused && !videoRef.current.ended 
+        && videoRef.current.readyState > videoRef.current.HAVE_CURRENT_DATA;
+        
+        if(currMove.Id !== currentMove.Id){
+            clearTimeout(SetcoverImageTime);
+            setCurrentMove(currMove);
+            setcoverImageShow(true);
+            setTimeout(() => {
+                if (!isPlaying) {
+                    videoRef.current.load();
+                }
+            });
+    
+            if (!isPlaying) {
+                videoRef.current.play();
+            }   
+        }
     }
 
     const containerStyle = {

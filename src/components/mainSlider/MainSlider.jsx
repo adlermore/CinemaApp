@@ -30,7 +30,6 @@ const Menu = ({ dataMoves, setCurrentMove }) => {
 
     const handleCurrentMove = (move) => {
         sessionStorage.setItem('lastClickedMovieId', move.Id);
-
         let seconds = move.Duration;
         let hours = Math.floor(seconds / 3600) + 'h';
         let minutes = Math.floor((seconds % 3600) / 60) + 'm';
