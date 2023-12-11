@@ -5,6 +5,7 @@
 .main_slider {
   position: relative;
   background: transparent;
+
   .label_title {
     font-size: 32px;
     line-height: 38px;
@@ -72,11 +73,13 @@
       object-fit: cover;
     }
   }
+
   @media (max-width: 1440px) {
     .label_title {
       font-size: 24px;
       line-height: 10px;
     }
+
     .slider_inner {
       height: 190px;
     }

@@ -2,7 +2,7 @@
 @import "./mixins";
 
 
-.menu_container{
+.menu_container {
     position: absolute;
     left: 0;
     top: 0;
@@ -13,14 +13,16 @@
     width: 110px;
     background: transparent linear-gradient(90deg, #040404 0%, #040404FA 21%, #04040400 100%) 0% 0% no-repeat padding-box;
     background-position: right;
-    .menu_inner{
+
+    .menu_inner {
         height: 100%;
         max-width: 340px;
         display: flex;
         flex-direction: column;
         padding: 60px 0 68px 38px;
     }
-    .user_block{
+
+    .user_block {
         position: relative;
         display: flex;
         align-items: center;
@@ -29,27 +31,32 @@
         opacity: 0;
         transition-duration: 1s;
     }
-    .user_image{
+
+    .user_image {
         width: 82px;
         height: 82px;
         border-radius: 50%;
         overflow: hidden;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
     }
-    .user_name{
+
+    .user_name {
         font-size: 32px;
         line-height: 38px;
         color: #F1F1F1;
         margin-left: 20px;
         font-family: $bold;
     }
-    .main_menu{
+
+    .main_menu {
         margin-top: 40px;
-        li{
+
+        li {
             height: 70px;
             display: flex;
             align-items: center;
@@ -58,26 +65,31 @@
             margin-bottom: 10px;
             transition: all 0.3s;
             border-radius: 12px;
-            &:hover{
+
+            &:hover {
                 background: #3B486D;
             }
-            img{
+
+            img {
                 width: 26px;
                 height: auto;
             }
-            &.active{
-                background: rgba(#3b486d,0.56);
+
+            &.active {
+                background: rgba(#3b486d, 0.56);
                 border-radius: 50%;
                 transition-duration: 2s;
             }
         }
     }
-    .menu_icon{
+
+    .menu_icon {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .menu_link{
+
+    .menu_link {
         margin-left: 50px;
         display: block;
         white-space: nowrap;
@@ -87,7 +99,8 @@
         line-height: 40px;
         color: #F1F1F1;
     }
-    .bottom_links{
+
+    .bottom_links {
         flex: 1;
         padding-left: 25px;
         display: flex;
@@ -95,7 +108,8 @@
         justify-content: flex-end;
         opacity: 0;
         transition: 0.3s;
-        a{
+
+        a {
             color: #858688;
             font-size: 24px;
             line-height: 30px;
@@ -107,28 +121,35 @@
             white-space: nowrap;
         }
     }
-    .link_inner{
+
+    .link_inner {
         display: flex;
         flex-direction: column;
     }
-    &.active_menu{
+
+    &.active_menu {
         width: 100%;
-        .bottom_links{
+
+        .bottom_links {
             opacity: 1;
         }
-        .user_block{
+
+        .user_block {
             opacity: 1;
         }
-        .menu_link{
+
+        .menu_link {
             opacity: 1;
         }
-        .main_menu{
-            li{
-                &.active{
+
+        .main_menu {
+            li {
+                &.active {
                     background: transparent;
                     border-radius: 12px;
                     transition: 0s;
-                    &:hover{
+
+                    &:hover {
                         background: #3B486D;
                         transition: 0.3s;
                     }
@@ -139,32 +160,40 @@
 
     @media (max-width: 1440px) {
         width: 85px;
+
         .menu_inner {
             padding: 20px 0 0 20px;
         }
+
         .main_menu li img {
             width: 23px;
         }
+
         .user_image {
             width: 61px;
             height: 60px;
         }
+
         .user_name {
             font-size: 26px;
             line-height: 31px;
         }
+
         .main_menu li {
             height: 55px;
             padding: 0 20px;
         }
+
         .menu_link {
             margin-left: 35px;
             font-size: 28px;
             line-height: 32px;
         }
+
         .main_menu {
             margin-top: 20px;
         }
+
         .bottom_links a {
             font-size: 18px;
             line-height: 23px;
@@ -174,4 +203,3 @@
     }
 
 }
-

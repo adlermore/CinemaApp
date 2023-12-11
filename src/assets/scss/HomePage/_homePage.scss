@@ -10,7 +10,8 @@
     background-size: cover !important;
     transition: opacity 0.5s;
     position: relative;
-    &::before{
+
+    &::before {
         content: "";
         background: transparent linear-gradient(90deg, #040404 0%, #040404FA 21%, #04040400 100%) 0% 0% no-repeat padding-box;
         position: absolute;
@@ -22,16 +23,19 @@
         bottom: 0;
         z-index: 1;
     }
-    .main_film_content{
+
+    .main_film_content {
         position: relative;
         z-index: 6;
     }
-    .video_inner_container{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+    .video_inner_container {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-    .video_container{
+
+    .video_container {
         position: absolute;
         transition: 0.5s;
         top: 0;
@@ -40,7 +44,8 @@
         bottom: 0;
         width: 100%;
         z-index: -1;
-        &::before{
+
+        &::before {
             content: "";
             background: transparent linear-gradient(90deg, #040404 0%, #040404FA 21%, #04040400 100%) 0% 0% no-repeat padding-box;
             position: absolute;
@@ -53,20 +58,25 @@
             z-index: 5;
         }
     }
-    &.coverImageShow{
-        .video_container{
+
+    &.coverImageShow {
+        .video_container {
             opacity: 0;
         }
     }
-    &.coverVideoShow{
+
+    &.coverVideoShow {
         background: transparent !important;
-        &:before{
+
+        &:before {
             opacity: 0;
         }
-        .video_container{
+
+        .video_container {
             opacity: 1;
         }
     }
+
     .content_type {
         color: #858688;
         font-size: 24px;
@@ -74,29 +84,34 @@
         font-family: $bold;
         text-transform: uppercase;
     }
-    .film_desc_image{
+
+    .film_desc_image {
         max-width: 680px;
         height: 150px;
         margin-top: 10px;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             vertical-align: top;
         }
     }
-    .second_line{
+
+    .second_line {
         margin-top: 15px;
         font-size: 30px;
         line-height: 42px;
         display: flex;
         align-items: center;
         color: #F1F1F1;
-        span{
+
+        span {
             display: block;
             margin-right: 20px;
         }
     }
-    .film_description{
+
+    .film_description {
         margin-top: 10px;
         font-size: 32px;
         max-width: 750px;
@@ -109,12 +124,14 @@
         position: relative;
         text-overflow: ellipsis
     }
-    .button_line{
+
+    .button_line {
         margin-top: 30px;
         display: flex;
-        align-items: center;   
+        align-items: center;
     }
-    .play_btn{
+
+    .play_btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -128,16 +145,19 @@
         text-decoration: none;
         height: 72px;
         transition: 0.3s;
-        svg{
+
+        svg {
             width: 25px;
             display: block;
             margin-right: 5px;
         }
-        &:hover{
+
+        &:hover {
             opacity: 0.7;
         }
     }
-    .info_btn{
+
+    .info_btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -152,32 +172,38 @@
         text-decoration: none;
         height: 72px;
         transition: 0.3s;
-        svg{
+
+        svg {
             width: 25px;
             display: block;
             margin-right: 5px;
         }
-        &:hover{
+
+        &:hover {
             opacity: 0.7;
         }
     }
 
     @media (max-width: 1440px) {
         padding-top: 50px;
+
         .film_desc_image img {
             width: 100%;
             height: 100%;
         }
+
         .film_desc_image {
             max-width: 468px;
             height: 63px;
             margin-top: 12px;
         }
+
         .second_line {
             margin-top: 10px;
             font-size: 24px;
             line-height: 37px;
         }
+
         .film_description {
             margin-top: 10px;
             font-size: 24px;
@@ -185,10 +211,13 @@
             line-height: 34px;
             min-height: 103px;
         }
+
         .button_line {
             margin-top: 20px;
         }
-        .play_btn , .info_btn{
+
+        .play_btn,
+        .info_btn {
             width: 184px;
             border-radius: 30px;
             font-size: 24px;
